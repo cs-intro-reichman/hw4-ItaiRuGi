@@ -32,20 +32,28 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        if(str2.length() > str1.length()){
+        String lwr1 = str1.toLowerCase();
+        String lwr2 = str2.toLowerCase();
+        int left = lwr1.length();
+
+        if(lwr2.length() > lwr1.length()){
             return false;
         }
-        for(int i = 0; i < str1.length(); i ++){
-            if(str1.charAt(i) == str2.charAt(0)){
-                for(int j = 1; j < str2.length(); j ++){
-                    if(str1.charAt(i + j) == str2.charAt(j) && j == str2.length()-1){
+        for(int i = 0; i < lwr1.length(); i ++){
+            if(left < lwr2.length()){
+                return false;
+            }
+            if(lwr1.charAt(i) == lwr2.charAt(0)){
+                for(int j = 0; j < lwr2.length(); j ++){
+                    if(lwr1.charAt((i) + j) == lwr2.charAt(j) && j == lwr2.length()-1){
                         return true;
                     }
-                    else if(str1.charAt(i + j) != str2.charAt(j)){
-                        j = str2.length() + 1;
+                    else if(lwr1.charAt(i + j) != lwr2.charAt(j)){
+                        j = lwr2.length() + 1;
                     }
                 }
             }
+            left --;
         }
         return false;
     }
