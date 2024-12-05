@@ -22,6 +22,15 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
+        /*
+         *    * @param str1 the first string to compare
+     * @param str2 the second string to compare
+     * @return -1 if str1 is lexicographically less than str2,
+     *         zero if they are equal, and 1 if str1 is
+     *         lexicographically greater than str2.
+     *         return -2 if there is an error with the input.
+     */
+    
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -126,9 +135,13 @@ public class ArrCharOps {
      *  The hash value of an empty array is zero.
      */
     public static long hashCode(char[] arr) {
+        if(arr.length == 0){
+            return 0;
+        }
+
         long ret = 0;
         for(int i = 0; i<arr.length; i++){
-            ret += arr[i]*Math.pow(7, arr.length-1);
+            ret += arr[i]*Math.pow(7, arr.length-(i+1));
         }
         return ret;
     }
@@ -172,26 +185,21 @@ public class ArrCharOps {
                 return -2;
             }
         }
-        if(str1.length() >= str2.length()){
-            loop = str2.length();
-        }else{
-            loop = str1.length();
+        if(str1.length() > str2.length()){
+            return 1;
+        }else if(str2.length() > str1.length()){
+            return -1;
         }
         
-        for(int i = 0; i < loop; i++){
-            if((char)lwr1.charAt(i) > (char)lwr2.charAt(i) && (char)lwr1.charAt(i) <= 122  && (char)lwr1.charAt(i) > 97){
+        for(int i = 0; i < str1.length(); i++){
+            if((char)lwr1.charAt(i) > (char)lwr2.charAt(i)){
                 return 1;
             }
-            if((char)lwr1.charAt(i) < (char)lwr2.charAt(i) && (char)lwr1.charAt(i) >= 97  && (char)lwr1.charAt(i) < 122){
+            if((char)lwr1.charAt(i) < (char)lwr2.charAt(i)){
                 return -1;
             }
         }
-       if(lwr1.length() > lwr2.length()){
-        return 1;
-       }
-       if(lwr2.length() > lwr1.length()){
-        return -1;
-       }
+       
         return 0;
     }
 }

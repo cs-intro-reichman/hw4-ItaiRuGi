@@ -14,6 +14,7 @@ public class MyString {
         System.out.println(contains("personality", "son")); // true
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
+        System.out.println(contains("two3" , "wot2" ));
     }
 
     /** Returns the lowercase version of the given string. */
@@ -62,5 +63,7 @@ public class MyString {
             left --;
         }
         return false;
+        
     }
+        
 }

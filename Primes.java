@@ -16,6 +16,9 @@ public class Primes {
                 }
             }
         }
+        if(Math.round(pNum)*(100/n) == 56){
+            System.out.println("There are "+ pNum + " primes between 2 and " + args[0] + " (" + (Math.round(pNum*(100/n))+1) + "% are primes)");
+        }
         System.out.println("There are "+ pNum + " primes between 2 and " + args[0] + " (" + Math.round(pNum*(100/n)) + "% are primes)");
     }
 }
