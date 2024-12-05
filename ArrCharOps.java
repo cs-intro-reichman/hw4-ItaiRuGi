@@ -184,7 +184,18 @@ public class ArrCharOps {
         }
         String lwrstr1 = str1.toLowerCase();
         String lwrstr2 = str2.toLowerCase();
+        for(int j= 0; j < lwrstr1.length(); j ++){
+            if((char)lwrstr1.charAt(j) < 97 || (char)lwrstr1.charAt(j) > 122){
+                return -2;
+            }
+        }
+        for(int j= 0; j < lwrstr2.length(); j ++){
+            if((char)lwrstr2.charAt(j) < 97 || (char)lwrstr2.charAt(j) > 122){
+                return -2;
+            }
+        }
        for(int i = 0; i < Math.min(str1.length(), str2.length()); i++){
+            
             if(str1.charAt(i) != str2.charAt(i)){
                 if((char)lwrstr1.charAt(i) > (char)lwrstr2.charAt(i)){
                     return 1;
