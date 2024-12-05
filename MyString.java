@@ -42,8 +42,8 @@ public class MyString {
         String lwr2 = str2.toLowerCase();
 
         if(lwr2.isEmpty()){
-            return true;
-        }
+            return false;
+        } //sdasdas
 
         if(lwr2.length() > lwr1.length()){
             return false;
