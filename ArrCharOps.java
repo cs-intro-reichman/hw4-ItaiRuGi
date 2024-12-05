@@ -177,10 +177,10 @@ public class ArrCharOps {
             return -2;
         }
         if(str2.isEmpty()){
-            return 1;
+            return -2;
         }
         if(str1.isEmpty()){
-            return -1;
+            return -2;
         }
         String lwrstr1 = str1.toLowerCase();
         String lwrstr2 = str2.toLowerCase();
