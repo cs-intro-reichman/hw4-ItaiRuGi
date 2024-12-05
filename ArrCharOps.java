@@ -186,6 +186,20 @@ public class ArrCharOps {
         if(lwr2.isEmpty()){
             return 1;
         }
+        String temp = "";
+        for(int i = 0; i < lwr1.length(); i++){
+            if((char)lwr1.charAt(i) >= 97 && (char)lwr1.charAt(i) <= 122){
+                temp += lwr1.charAt(i);
+            }
+        }
+        lwr1 = temp;
+        String tempTwo = "";
+        for(int i = 0; i < lwr1.length(); i++){
+            if((char)lwr2.charAt(i) >= 97 && (char)lwr2.charAt(i) <= 122){
+                tempTwo += lwr1.charAt(i);
+            }
+        }
+        lwr2 = tempTwo;
         for(int j = 0; j< lwr1.length(); j ++){
             if(lwr1.charAt(j) < 97 || lwr1.charAt(j) > 122){
                 return -2;
