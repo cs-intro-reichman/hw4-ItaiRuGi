@@ -14,7 +14,12 @@ public class MyString {
         System.out.println(contains("personality", "son")); // true
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
-        System.out.println(contains("hhhhhhhhhhhh" , "hhhhhhhhh" ));
+        System.out.println(contains("hhhhhhhhhhhh" , "hgh" ));
+        System.out.println(contains("hhhhhhhhhhhh" , "hhhghhhhh" ));
+        System.out.println(contains("hhhhhhhhhhhh" , "hhhhhhhhhhhh" ));
+        System.out.println(contains("hermitage" , "ageh" ));
+        //System.out.println(contains("hhhhhhhhhhhh" , "hhhhhhhhh" ));
+        //System.out.println(contains("hhhhhhhhhhhh" , "hhhhhhhhh" ));
     }
 
     /** Returns the lowercase version of the given string. */
@@ -60,7 +65,7 @@ public class MyString {
                     }
                 }
                 lwr1 = temp;
-            }else if(length == lwr2.length()){
+            }else if(length == lwr1.length()-1){
                 return false;
             }else{
                 length ++;
