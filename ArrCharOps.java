@@ -5,7 +5,14 @@ public class ArrCharOps {
         String str = "clearly";
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        System.out.println(str);  // Prints the string
+        System.out.println(compareTo("brotheru", "brotheru"));
+        System.out.println(compareTo("TRUOISAUDOAIr", "brothe"));
+        System.out.println(compareTo("AL:KSJDNKL:J", "a"));
+        System.out.println(compareTo("gsgvcv", "agfafa"));
+        System.out.println(compareTo("adgafas", "asdfgaf"));
+        System.out.println(compareTo("agffsd", "asdsd"));
+        System.out.println(compareTo("trumple", "trumpleaskdjalskdfj"));
+        /*System.out.println(str);  // Prints the string
         println(arr1);            // Prints an array of characters
         System.out.println(charAt(arr1,2));      
         System.out.println(indexOf(arr1,'l'));  
@@ -20,11 +27,10 @@ public class ArrCharOps {
         System.out.println(compareTo("apple", "banana"));
         System.out.println(compareTo("apple", "applepie"));
         System.out.println(compareTo("Zoo", "zoo"));
-        System.out.println(compareTo("hitler", ""));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
-        /*
-         *    * @param str1 the first string to compare
+        */
+         /*    * @param str1 the first string to compare
      * @param str2 the second string to compare
      * @return -1 if str1 is lexicographically less than str2,
      *         zero if they are equal, and 1 if str1 is
@@ -173,15 +179,10 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        if(str1.isEmpty() && str2.isEmpty()){
+        if(str1.isEmpty() || str2.isEmpty()){
             return -2;
         }
-        if(str2.isEmpty()){
-            return -2;
-        }
-        if(str1.isEmpty()){
-            return -2;
-        }
+        
         String lwrstr1 = str1.toLowerCase();
         String lwrstr2 = str2.toLowerCase();
         for(int j= 0; j < lwrstr1.length(); j ++){
@@ -196,7 +197,7 @@ public class ArrCharOps {
         }
        for(int i = 0; i < Math.min(str1.length(), str2.length()); i++){
             
-            if(str1.charAt(i) != str2.charAt(i)){
+            if(lwrstr1.charAt(i) != lwrstr2.charAt(i)){
                 if((char)lwrstr1.charAt(i) > (char)lwrstr2.charAt(i)){
                     return 1;
                 }
