@@ -42,7 +42,7 @@ public class MyString {
         String lwr2 = str2.toLowerCase();
 
         if(lwr2.isEmpty()){
-            return false;
+            return true;
         } //sdasdas
 
         if(lwr2.length() > lwr1.length()){
@@ -51,7 +51,7 @@ public class MyString {
         
         for(int i = 0; i < lwr1.length(); i++){
             if(lwr1.charAt(i) == lwr2.charAt(0)){
-                if(lwr2.length() > lwr1.length()-i){
+                if(lwr2.length() >= lwr1.length()-i){
                     return false;
                 }
                 for(int j = 0; j < lwr2.length(); j++){
