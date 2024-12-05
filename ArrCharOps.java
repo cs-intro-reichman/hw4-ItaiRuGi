@@ -195,13 +195,13 @@ public class ArrCharOps {
                 return -2;
             }
         }
-       for(int i = 0; i < Math.min(str1.length(), str2.length()); i++){
+       for(int i = 0; i < (Math.min(lwrstr1.length(), lwrstr2.length())); i++){
             
-            if(lwrstr1.charAt(i) != lwrstr2.charAt(i)){
+            if((char)lwrstr1.charAt(i) != (char)lwrstr2.charAt(i)){
                 if((char)lwrstr1.charAt(i) > (char)lwrstr2.charAt(i)){
                     return 1;
                 }
-                if((char)lwrstr1.charAt(i) < (char)lwrstr2.charAt(i)){
+                else if((char)lwrstr1.charAt(i) < (char)lwrstr2.charAt(i)){
                     return -1;
                 }
             }
