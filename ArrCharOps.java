@@ -174,7 +174,9 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         String lwr1 = str1.toLowerCase();
-        String lwr2 = str2.toLowerCase(); 
+        String lwr2 = str2.toLowerCase();
+        int numOne = 0;
+        int numTwo = 0;
         if(lwr2.isEmpty() && lwr1.isEmpty()){
             return 0;
         }
@@ -201,14 +203,16 @@ public class ArrCharOps {
         }
         
         for(int i = 0; i < str1.length(); i++){
-            if((char)lwr1.charAt(i) > (char)lwr2.charAt(i)){
-                return 1;
-            }
-            if((char)lwr1.charAt(i) < (char)lwr2.charAt(i)){
-                return -1;
-            }
+            numOne += (char)lwr1.charAt(i);
+            numTwo += (char)lwr2.charAt(i);
+
         }
        
+        if(numOne > numTwo){
+            return 1;
+        }  else if(numTwo > numOne){
+            return -1;
+        }
         return 0;
     }
 }
