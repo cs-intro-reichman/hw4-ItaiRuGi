@@ -173,7 +173,38 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        String lwr1 = str1.toLowerCase();
+        if(str1.isEmpty() && str2.isEmpty()){
+            return 0;
+        }
+        if(str2.isEmpty()){
+            return 1;
+        }
+        if(str1.isEmpty()){
+            return -1;
+        }
+        String lwrstr1 = str1.toLowerCase();
+        String lwrstr2 = str2.toLowerCase();
+       for(int i = 0; i < Math.min(str1.length(), str2.length()); i++){
+            if(str1.charAt(i) != str2.charAt(i)){
+                if((char)lwrstr1.charAt(i) > (char)lwrstr2.charAt(i)){
+                    return 1;
+                }
+                if((char)lwrstr1.charAt(i) < (char)lwrstr2.charAt(i)){
+                    return -1;
+                }
+            }
+       }
+       if(lwrstr1.length() > lwrstr2.length()){
+            return 1;
+       }
+       if(lwrstr1.length() < lwrstr2.length()){
+            return -1;
+       }
+       return 0;
+       
+       
+       
+        /*  String lwr1 = str1.toLowerCase();
         String lwr2 = str2.toLowerCase();
         int numOne = 0;
         int numTwo = 0;
@@ -227,6 +258,7 @@ public class ArrCharOps {
         }  else if(numTwo > numOne){
             return -1;
         }
+            */
         return 0;
     }
 }
