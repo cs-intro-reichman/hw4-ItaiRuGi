@@ -44,13 +44,27 @@ public class MyString {
         if(lwr2.isEmpty()){
             return true;
         }
-        
-        int left = lwr1.length();
 
         if(lwr2.length() > lwr1.length()){
             return false;
         }
-
+        
+        for(int i = 0; i < lwr1.length(); i++){
+            if(lwr1.charAt(i) == lwr2.charAt(0)){
+                if(lwr2.length() > lwr1.length()-i){
+                    return false;
+                }
+                for(int j = 0; j < lwr2.length(); j++){
+                    if(lwr2.charAt(j) == lwr1.charAt(i+j) && j == lwr2.length()-1){
+                        return true;
+                    }else if(lwr2.charAt(j) != lwr1.charAt(i + j)){
+                        j = lwr2.length()+3;
+                    }
+                }
+            }
+        }
+        return false;
+        /*
         for(int i = 0; i < str2.length(); i ++){
             boolean found = false;
             int length = 0;
@@ -118,6 +132,6 @@ public class MyString {
         }
         return false;
         */ 
-    return true;
+    
     }
 }
