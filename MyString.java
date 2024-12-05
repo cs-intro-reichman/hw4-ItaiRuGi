@@ -34,6 +34,12 @@ public class MyString {
     public static boolean contains(String str1, String str2) {
         String lwr1 = str1.toLowerCase();
         String lwr2 = str2.toLowerCase();
+        if(lwr2.isEmpty()){
+            return true;
+        }
+        if(lwr2.isEmpty()){
+            return false;
+        }
         int left = lwr1.length();
 
         if(lwr2.length() > lwr1.length()){
